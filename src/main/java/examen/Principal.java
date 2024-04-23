@@ -3,6 +3,7 @@ package examen;
 import javax.swing.JFrame;
 
 import examen.utils.Apariencia;
+import examen.views.PanelTablaContratos;
 
 public class Principal extends JFrame {
 
@@ -17,12 +18,15 @@ public class Principal extends JFrame {
 	 * Constructor.
 	 */
 	public Principal() {
-		super("Titulo");
+		super("Bankonter");
 		
 		this.setBounds(100, 100, 700, 600);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setResizable(false);
 		
+		PanelTablaContratos panelTC = new PanelTablaContratos();
 		
+		this.getContentPane().add(panelTC);
 	}
 	
 	/**
