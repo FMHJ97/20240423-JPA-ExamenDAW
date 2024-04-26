@@ -403,7 +403,13 @@ public class PanelGestionContratos extends JPanel {
 			this.jtfDescripcion.setText(c.getDescripcion());
 			this.jtfSaldo.setText("" + c.getSaldo());
 			this.jtfLimite.setText("" + c.getLimite());
-			this.jtfFecha.setText(sdf.format(c.getFechaFirma()));
+			
+			if (c.getFechaFirma() != null) {
+				this.jtfFecha.setText(sdf.format(c.getFechaFirma()));
+			} else {
+				this.jtfFecha.setText("");
+			}
+			
 			
 			for (int i = 0; i < this.jcbUsuario.getItemCount(); i++) {
 				if (this.jcbUsuario.getItemAt(i).getId() == c.getIdUsuario()) {
